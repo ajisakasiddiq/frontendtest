@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBrand</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="brand-title">MyBrand</div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#product">Product</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="content-section">
+        <h1>Welcome to MyBrand</h1>
+    </section>
+    <section id="about" class="content-section">
+        <h2>About Us</h2>
+        <p>We are a company dedicated to delivering top-notch solutions.</p>
+    </section>
+
+    <section id="product" class="content-section">
+        <h2>Our Product</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="aset/63a0ed6cc4af6b1a0f1eff4b_board-book-printing-illustrations-p-500.png" alt="">
+            </div>
+            <div class="service-card">
+                <img src="aset/63a1eb64a22193717e2e0570_flexi-cover-book-printing-p-500.png" alt="">
+            </div>
+            <div class="service-card">
+                <img src="aset/63a1f18bddaf4b954b1a6c4b_hard-cover-book-printing-aaah-becedaire-p-500.png" alt="">
+            </div>
+            <div class="service-card">
+                <img src="aset/63a1f29efe230a5db7882d8d_had-cover-book-saveur-gastronimique-biere-p-500.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us to learn more about our offerings.</p>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 MyBrand. All Rights Reserved. Designed by Ajisaka Siddiq.</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.querySelector('.toggle-button');
+        const navbarLinks = document.querySelector('.navbar-links');
+        const navbar = document.querySelector('.navbar');
+
+        toggleButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('transparent');
+            } else {
+                navbar.classList.remove('transparent');
+            }
+        });
+    </script>
+    <script>
+        const sections = document.querySelectorAll('.content-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+
+</html>
