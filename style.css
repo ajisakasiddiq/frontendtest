@@ -102,19 +102,12 @@ img {
 }
 
 .content-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.content-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+    padding: 100px 20px;
+    text-align: center;
 }
 
 #home {
-    /* background: url('https://via.placeholder.com/1600x900') repeat center center/cover; */
-    background-color: #0099ff;
+    background: url('aset/inna-safa-XbJx7F4Lv1A-unsplash.jpg') repeat center center/cover;
     background-position: 0 0;
     animation: slideBg 30s linear infinite;
     color: #fff;
